@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String books[] = {"The Alchemist", "The Old Man and the Sea", "War and Peace", "The Hunger Games"};
+        String books[] = {"The Alchemist", "The Old Man and the Sea", "War and Peace"};
         Library lib1 = new Library(books.length, books);
         System.out.println("Welcome,");
         outer:while(true) {
