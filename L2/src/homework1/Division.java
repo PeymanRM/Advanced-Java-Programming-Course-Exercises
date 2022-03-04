@@ -1,5 +1,8 @@
 package homework1;
 
+/**
+ * Created by Peyman RM
+ */
 public class Division extends Operation implements Result {
     @Override
     public void getResult() {

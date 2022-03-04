@@ -1,5 +1,8 @@
 package homework1;
 
+/**
+ * Created by Peyman RM
+ */
 public class Multiplication extends  Operation implements Result {
 
     @Override
