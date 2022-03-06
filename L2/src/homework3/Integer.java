@@ -1,5 +1,8 @@
 package homework3;
 
+/**
+ * Created by Peyman RM
+ */
 public class Integer implements MyInteger{
     private int num;
 

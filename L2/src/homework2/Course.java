@@ -1,5 +1,8 @@
 package homework2;
 
+/**
+ * Created by Peyman RM
+ */
 public class Course {
     private int coefficient;
     private String courseName;
