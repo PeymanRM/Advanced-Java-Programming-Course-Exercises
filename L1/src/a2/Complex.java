@@ -1,5 +1,8 @@
 package a2;
 
+/**
+ * Created by Peyman RM
+ */
 public class Complex {
     private float realPart, imaginaryPart;
 

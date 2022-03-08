@@ -2,6 +2,9 @@ package homework3;
 
 import java.util.Scanner;
 
+/**
+ * Created by Peyman RM
+ */
 public class Main {
     public static void main(String[] args) {
         EquationSolver equationSolver = new EquationSolver();

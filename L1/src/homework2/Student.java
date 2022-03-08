@@ -1,5 +1,8 @@
 package homework2;
 
+/**
+ * Created by Peyman RM
+ */
 public class Student {
     private int[] coefficients;
     private double[] grades;

@@ -1,5 +1,8 @@
 package a0;
 
+/**
+ * Created by Peyman RM
+ */
 public class Rectangle
 {
     private float width = 1, length = 1;

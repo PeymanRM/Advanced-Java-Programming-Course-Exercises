@@ -1,5 +1,8 @@
 package homework3;
 
+/**
+ * Created by Peyman RM
+ */
 public class EquationSolver {
     private double a,b,c,d,e,f;
 

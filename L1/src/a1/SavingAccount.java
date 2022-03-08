@@ -1,5 +1,8 @@
 package a1;
 
+/**
+ * Created by Peyman RM
+ */
 public class SavingAccount {
     private static float annualInterestRate;
     private float savingsBalance;
