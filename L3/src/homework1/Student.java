@@ -19,7 +19,7 @@ public class Student {
         password = hashPassword(input.nextLine());
     }
 
-    public void login() {
+    public boolean login() {
         //getting info
         Scanner input = new Scanner(System.in);
         String username, password;
@@ -32,12 +32,16 @@ public class Student {
         try {
             Student student = Database.findByUsername(username);
             if (password.equals(student.password)){
+                this.name = student.name;
+                this.username = student.username;
                 System.out.println("Logged in");
+                return true;
             } else{
                 throw new StudentException("Invalid username or password");
             }
         } catch (StudentException e) {
             System.out.println(e.getMessage());
+            return false;
         }
     }
 

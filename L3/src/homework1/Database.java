@@ -14,7 +14,7 @@ public final class Database {
         throw new StudentException("Invalid username or password");
     }
 
-    public void addStudent(Student student) throws DatabaseException{
+    public static void addStudent(Student student) throws DatabaseException{
         if(studentCount != 10){
             students[studentCount] = student;
             studentCount++;
