@@ -14,7 +14,18 @@ public class Student {
         System.out.println("Enter student's name: ");
         name = input.nextLine();
         System.out.println("Enter student's username: ");
-        username = input.nextLine();
+        while(true) {
+            username = input.nextLine();
+            try {
+                Student student = Database.findByUsername(username);
+
+                //Line below will only be executed if the username is already taken
+                System.out.println("!!This username is already taken; try another one: ");
+
+            } catch (StudentException e) {
+                break;
+            }
+        }
         System.out.println("Enter student's password: ");
         password = hashPassword(input.nextLine());
     }
@@ -47,6 +58,10 @@ public class Student {
 
     public String getUsername() {
         return username;
+    }
+
+    public String getName() {
+        return name;
     }
 
     private String hashPassword(String password){

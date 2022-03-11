@@ -9,7 +9,8 @@ public final class Database {
 
     public static Student findByUsername(String username) throws StudentException{
         for (Student student : students) {
-            if(student.getUsername().equals(username)) return student;
+            if(student == null) throw new StudentException("Invalid username or password");
+            else if(student.getUsername().equals(username)) return student;
         }
         throw new StudentException("Invalid username or password");
     }
