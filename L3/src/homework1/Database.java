@@ -16,7 +16,8 @@ public final class Database {
 
     public void addStudent(Student student) throws DatabaseException{
         if(studentCount != 10){
-            students[studentCount+1] = student;
+            students[studentCount] = student;
+            studentCount++;
         } else {
             throw new DatabaseException("Database reached its maximum capacity");
         }
