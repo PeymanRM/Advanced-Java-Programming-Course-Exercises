@@ -42,7 +42,7 @@ public class Student {
         //logging in
         try {
             Student student = Database.findByUsername(username);
-            if (password.equals(student.password)){
+            if (password.equals(student.password)){  //TODO: password should be verified by hashing algorithm
                 this.name = student.name;
                 this.username = student.username;
                 System.out.println("Logged in");
