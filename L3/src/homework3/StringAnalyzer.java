@@ -13,6 +13,7 @@ public class StringAnalyzer {
     public int analyse() throws NumberException {
         String trimmedStr = str.trim();
         for (int i = 0; i < trimmedStr.length(); i++) {
+            //using ASCII table...
             if(trimmedStr.charAt(i) > 47 && trimmedStr.charAt(i) < 58) throw new NumberException("Provided string has number!");
         }
         return str.length();
