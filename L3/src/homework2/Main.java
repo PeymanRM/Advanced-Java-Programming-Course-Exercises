@@ -13,12 +13,13 @@ public class Main {
             QuadraticEquation equation = new QuadraticEquation(input.nextDouble(), input.nextDouble(), input.nextDouble());
             try {
                 double[] answers = equation.getAnswers();
-                System.out.print("Answer(s):\t\t");
+                System.out.print("Answer(s):\t");
                 if(answers[0] == answers[1]) System.out.println(answers[0]);
-                else System.out.println(answers[0] + "\t\t" + answers[1]);
+                else System.out.println(answers[0] + "   " + answers[1]);
             } catch (EquationException e){
                 System.out.println(e.getMessage());
             }
+            System.gc();
         }
     }
 }
