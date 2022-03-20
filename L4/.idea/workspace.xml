@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60f36f5e-66b8-45f1-b1ef-9cc533d50e9a" name="Changes" comment="main created">
-      <change afterPath="$PROJECT_DIR$/src/homework3/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="60f36f5e-66b8-45f1-b1ef-9cc533d50e9a" name="Changes" comment="getters implemented">
+      <change beforePath="$PROJECT_DIR$/src/homework3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/homework3/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +94,7 @@
       <option name="presentableId" value="Default" />
       <updated>1647705066444</updated>
       <workItem from="1647705067744" duration="2610000" />
-      <workItem from="1647771241199" duration="764000" />
+      <workItem from="1647771241199" duration="1450000" />
     </task>
     <task id="LOCAL-00001" summary="User class completed">
       <created>1647705176337</created>
@@ -125,7 +124,21 @@
       <option name="project" value="LOCAL" />
       <updated>1647771514694</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="setters implemented">
+      <created>1647773632377</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1647773632377</updated>
+    </task>
+    <task id="LOCAL-00006" summary="getters implemented">
+      <created>1647773681084</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1647773681084</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +160,8 @@
     <MESSAGE value="classwork completed" />
     <MESSAGE value="homework 1 &amp; 2 completed" />
     <MESSAGE value="main created" />
-    <option name="LAST_COMMIT_MESSAGE" value="main created" />
+    <MESSAGE value="setters implemented" />
+    <MESSAGE value="getters implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="getters implemented" />
   </component>
 </project>
