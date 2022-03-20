@@ -25,4 +25,20 @@ public class Student <userdata> {
     public void setGrades(List<Double> grades) {
         this.grades = grades;
     }
+
+    public userdata getName() {
+        return name;
+    }
+
+    public userdata getStudentCode() {
+        return studentCode;
+    }
+
+    public userdata getFatherName() {
+        return fatherName;
+    }
+
+    public List<Double> getGrades() {
+        return grades;
+    }
 }
