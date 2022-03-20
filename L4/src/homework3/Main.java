@@ -25,6 +25,13 @@ public class Main {
 
 
         //testing getters
-
+        System.out.println("\nName: " + student.getName());
+        System.out.println("Code: " + student.getStudentCode());
+        System.out.println("Father's Name: " + student.getFatherName());
+        System.out.println("Grades: ");
+        for (Object grade : student.getGrades()) {
+            System.out.print(grade);
+            System.out.print("   ");
+        }
     }
 }
