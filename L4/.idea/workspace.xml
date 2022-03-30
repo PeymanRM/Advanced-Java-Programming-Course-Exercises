@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60f36f5e-66b8-45f1-b1ef-9cc533d50e9a" name="Changes" comment="a1 completed">
-      <change afterPath="$PROJECT_DIR$/src/a2/Main.java" afterDir="false" />
+    <list default="true" id="60f36f5e-66b8-45f1-b1ef-9cc533d50e9a" name="Changes" comment="implemented number input">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/a2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/a2/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,20 +49,7 @@
       <recent name="H:\Education\Computer Science\Advanced Java Programming Course Exercises\L4\img" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (4)">
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="homework1.Main" />
-      <module name="L4" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="homework1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Main (5)">
     <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="homework2.Main" />
       <module name="L4" />
@@ -102,6 +89,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main (5)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="a2.Main" />
+      <module name="L4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="a2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="classwork.Main" />
       <module name="L4" />
@@ -117,11 +117,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (5)" />
         <item itemvalue="Application.Main (4)" />
         <item itemvalue="Application.Main (3)" />
         <item itemvalue="Application.Main (2)" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -135,7 +135,7 @@
       <updated>1647705066444</updated>
       <workItem from="1647705067744" duration="2610000" />
       <workItem from="1647771241199" duration="4212000" />
-      <workItem from="1648675898589" duration="3233000" />
+      <workItem from="1648675898589" duration="5019000" />
     </task>
     <task id="LOCAL-00001" summary="User class completed">
       <created>1647705176337</created>
@@ -214,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648681144927</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="implemented number input">
+      <created>1648681705398</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1648681705398</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,6 +263,7 @@
     <MESSAGE value="images added" />
     <MESSAGE value="implemented storing names part" />
     <MESSAGE value="a1 completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="a1 completed" />
+    <MESSAGE value="implemented number input" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented number input" />
   </component>
 </project>
