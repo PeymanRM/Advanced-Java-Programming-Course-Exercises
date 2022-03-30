@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60f36f5e-66b8-45f1-b1ef-9cc533d50e9a" name="Changes" comment="implemented setters test">
-      <change beforePath="$PROJECT_DIR$/src/homework3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/homework3/Main.java" afterDir="false" />
+    <list default="true" id="60f36f5e-66b8-45f1-b1ef-9cc533d50e9a" name="Changes" comment="implemented storing names part">
+      <change afterPath="$PROJECT_DIR$/src/a1/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,10 +33,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/img" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\Education\Computer Science\Advanced Java Programming Course Exercises\L4\img" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Main (3)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -108,7 +115,8 @@
       <option name="presentableId" value="Default" />
       <updated>1647705066444</updated>
       <workItem from="1647705067744" duration="2610000" />
-      <workItem from="1647771241199" duration="3146000" />
+      <workItem from="1647771241199" duration="4212000" />
+      <workItem from="1648675898589" duration="1788000" />
     </task>
     <task id="LOCAL-00001" summary="User class completed">
       <created>1647705176337</created>
@@ -159,7 +167,21 @@
       <option name="project" value="LOCAL" />
       <updated>1647775389827</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="homework3 completed">
+      <created>1647775801107</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1647775801107</updated>
+    </task>
+    <task id="LOCAL-00009" summary="images added">
+      <created>1647776068222</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1647776068222</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,6 +207,9 @@
     <MESSAGE value="getters implemented" />
     <MESSAGE value="main" />
     <MESSAGE value="implemented setters test" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented setters test" />
+    <MESSAGE value="homework3 completed" />
+    <MESSAGE value="images added" />
+    <MESSAGE value="implemented storing names part" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented storing names part" />
   </component>
 </project>
