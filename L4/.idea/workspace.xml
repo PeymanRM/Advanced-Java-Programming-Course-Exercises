@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60f36f5e-66b8-45f1-b1ef-9cc533d50e9a" name="Changes" comment="implemented storing names part">
+    <list default="true" id="60f36f5e-66b8-45f1-b1ef-9cc533d50e9a" name="Changes" comment="a1 completed">
+      <change afterPath="$PROJECT_DIR$/src/a2/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/a1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/a1/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +135,7 @@
       <updated>1647705066444</updated>
       <workItem from="1647705067744" duration="2610000" />
       <workItem from="1647771241199" duration="4212000" />
-      <workItem from="1648675898589" duration="2467000" />
+      <workItem from="1648675898589" duration="3233000" />
     </task>
     <task id="LOCAL-00001" summary="User class completed">
       <created>1647705176337</created>
@@ -207,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648680131481</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="a1 completed">
+      <created>1648681144927</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1648681144927</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,6 +255,7 @@
     <MESSAGE value="homework3 completed" />
     <MESSAGE value="images added" />
     <MESSAGE value="implemented storing names part" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented storing names part" />
+    <MESSAGE value="a1 completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="a1 completed" />
   </component>
 </project>
