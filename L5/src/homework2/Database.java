@@ -4,6 +4,7 @@ package homework2;
  * Created by Peyman RM
  */
 public class Database {
+    //singleton design pattern (the lazy one:\)
     private static Database database;
     public synchronized static Database getInstance() {  //not efficient
         if(database == null){
@@ -13,6 +14,7 @@ public class Database {
     }
     private Database() {}
 
+    //setting and getting data
     private String username, password;
 
     public void setUsername(String username) {
