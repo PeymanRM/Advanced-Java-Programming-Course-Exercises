@@ -5,7 +5,7 @@ package homework2;
  */
 public class Database {
     private static Database database;
-    public synchronized static Database getInstance() {
+    public synchronized static Database getInstance() {  //not efficient
         if(database == null){
             database = new Database();
         }
