@@ -11,4 +11,5 @@ public class Database {
         }
         return database;
     }
+    private Database() {}
 }
