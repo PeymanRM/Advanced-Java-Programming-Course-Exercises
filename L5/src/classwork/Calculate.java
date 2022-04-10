@@ -6,5 +6,5 @@ package classwork;
 public interface Calculate {
     char calcPlus = '+';
     char calcMinus = '-';
-    double calc(double num1, double num2);
+    int calc(int num1, int num2);
 }

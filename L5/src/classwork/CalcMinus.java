@@ -5,7 +5,7 @@ package classwork;
  */
 public class CalcMinus implements Calculate{
     @Override
-    public double calc(double num1, double num2) {
+    public int calc(int num1, int num2) {
         return num1 - num2;
     }
 }
