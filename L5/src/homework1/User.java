@@ -1,5 +1,8 @@
 package homework1;
 
+/**
+ * Created by Peyman RM
+ */
 public class User {
     String username, name, password, address, telephone, cellphone, degree;
     int age;
