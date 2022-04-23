@@ -11,37 +11,38 @@ public class Main {
         System.out.println("Hi, ");
         outer:while (true) {
             System.out.println("How can we help you?");
-            System.out.println("1.Create a new user\n2.Edit an existing user\n3.Exit");
+            System.out.println("1.Create a new user\n2.Show users\n3.Edit an existing user\n4.Exit");
             switch (input.nextInt()){
                 case 1:
-                    createUser();
+                    Database.getInstance().addUser(getUserInfo());
                     break;
                 case 2:
-                    updateUser();
+                    Database.getInstance().showUsers();
                     break;
                 case 3:
+                    System.out.println("Enter the ID of the user you want to edit: ");
+                    Database.getInstance().updateUser(input.nextInt(),getUserInfo());
+                    break;
+                case 4:
                     break outer;
             }
         }
         Database.getInstance().closeConnection();
     }
 
-    private static void createUser(){
+    private static User getUserInfo(){
         Scanner input = new Scanner(System.in);
         User user = new User();
-        System.out.println("Username: ");
+        System.out.print("Username: ");
         user.setUsername(input.nextLine());
-        System.out.println("Email Address: ");
+        System.out.print("Email Address: ");
         user.setEmailAddress(input.nextLine());
-        System.out.println("Password: ");
+        System.out.print("Password: ");
         user.setPassword(input.nextLine());
-        System.out.println("Degree: ");
+        System.out.print("Degree: ");
         user.setDegree(input.nextLine());
-        System.out.println("Age: ");
+        System.out.print("Age: ");
         user.setAge(input.nextInt());
-        Database.getInstance().addUser(user);
-    }
-    private static void updateUser(){
-
+        return user;
     }
 }
