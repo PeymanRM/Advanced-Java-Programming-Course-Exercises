@@ -5,11 +5,11 @@ import java.sql.*;
 /**
  * Created by Peyman RM
  */
-public class Database {
-    private static Database database = new Database();
-    public static Database getInstance() {return database;}
+public class UserRepo {
+    private static UserRepo database = new UserRepo();
+    public static UserRepo getInstance() {return database;}
     private Connection connection = null;
-    private Database() {
+    private UserRepo() {
         try {
         connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/advanced-java-programming-course"
                 , "JavaLearner", "LearningIsFun,HomeworkIsn't");
@@ -18,7 +18,7 @@ public class Database {
         }
     }
 
-    public void addUser(User user){
+    public void addUser(UserEnti user){
         try {
             Statement stmt = connection.createStatement();
             ResultSet resultSet = stmt.executeQuery("select count(*) from l6homework1");
@@ -60,7 +60,7 @@ public class Database {
         }
     }
 
-    public void updateUser(int id, User user) {
+    public void updateUser(int id, UserEnti user) {
         try {
             PreparedStatement preparedStatement =
                     connection.prepareStatement("update l6homework1 set username=?,emailAddress=?,password=?,age=?,degree=? where id="+id);

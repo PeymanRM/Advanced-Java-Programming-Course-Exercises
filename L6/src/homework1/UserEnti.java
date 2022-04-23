@@ -3,7 +3,7 @@ package homework1;
 /**
  * Created by Peyman RM
  */
-public class User {
+public class UserEnti {
     String username, emailAddress, password, degree;
     int age;
 
