@@ -8,10 +8,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Hi, ");
+        System.out.print("Hi, ");
         outer:while (true) {
-            System.out.println("How can we help you?");
-            System.out.println("1.Create a new user\n2.Show users\n3.Edit an existing user\n4.Exit");
+            System.out.println("\n How can we help you?");
+            System.out.println("   1.Create a new user\n   2.Show users\n   3.Edit an existing user\n   4.Exit");
             switch (input.nextInt()){
                 case 1:
                     Database.getInstance().addUser(getUserInfo());

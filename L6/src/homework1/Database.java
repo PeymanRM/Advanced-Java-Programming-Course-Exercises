@@ -39,7 +39,22 @@ public class Database {
     }
 
     public void showUsers() {
-
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("select * from l6homework1 where id>=?");
+            preparedStatement.setLong(1, 1);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            System.out.println("Users:");
+            while (resultSet.next()) {
+                System.out.print("ID: " + resultSet.getLong("ID"));
+                System.out.print("\t\tUsername: " + resultSet.getString("username"));
+                System.out.print("\t\tEmail Address: " + resultSet.getString("emailAddress"));
+                System.out.print("\t\tAge: " + resultSet.getInt("age"));
+                System.out.print("\t\tDegree: " + resultSet.getString("degree"));
+                System.out.println();
+            }
+        } catch (SQLException e) {
+            System.out.println("DB ERROR " + e.getMessage());
+        }
     }
 
     public void updateUser(int id, User user) {
