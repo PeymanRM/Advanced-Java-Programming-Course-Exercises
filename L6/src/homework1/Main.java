@@ -1,8 +1,5 @@
 package homework1;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.Scanner;
 
 /**
@@ -26,12 +23,23 @@ public class Main {
                     break outer;
             }
         }
-        try {
-            Database.getInstance().closeConnection();
+        Database.getInstance().closeConnection();
     }
 
     private static void createUser(){
-
+        Scanner input = new Scanner(System.in);
+        User user = new User();
+        System.out.println("Username: ");
+        user.setUsername(input.nextLine());
+        System.out.println("Email Address: ");
+        user.setEmailAddress(input.nextLine());
+        System.out.println("Password: ");
+        user.setPassword(input.nextLine());
+        System.out.println("Degree: ");
+        user.setDegree(input.nextLine());
+        System.out.println("Age: ");
+        user.setAge(input.nextInt());
+        Database.getInstance().addUser(user);
     }
     private static void updateUser(){
 

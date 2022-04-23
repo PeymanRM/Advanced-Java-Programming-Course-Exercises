@@ -4,29 +4,24 @@ public class User {
     String username, emailAddress, password, degree;
     int age;
 
-    public User setUsername(String username) {
+    public void setUsername(String username) {
         this.username = username;
-        return this;
     }
 
-    public User setEmailAddress(String emailAddress) {
+    public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
-        return this;
     }
 
-    public User setPassword(String password) {
+    public void setPassword(String password) {
         this.password = password;
-        return this;
     }
 
-    public User setDegree(String degree) {
+    public void setDegree(String degree) {
         this.degree = degree;
-        return this;
     }
 
-    public User setAge(int age) {
+    public void setAge(int age) {
         this.age = age;
-        return this;
     }
 
     public String getUsername() {
