@@ -17,18 +17,19 @@ public class UserRepo {
         connection.setAutoCommit (false);
     }
 
-    public void insert (UserEnti user) throws Exception {
-        preparedStatement = connection.prepareStatement("select count(*) from l6homework1");
+    public void insertUser(UserEnti user) throws Exception {
+        preparedStatement=connection.prepareStatement ("INSERT INTO l7classwork(name, username, password, email) VALUES (?,?,?,?)");
+        preparedStatement.setString(1, user.getName());
+        preparedStatement.setString(2, user.getUsername());
+        preparedStatement.setString(3, user.getPassword());
+        preparedStatement.setString(4, user.getEmail());
+    }
+    public UserEnti selectUser(String username) throws Exception {
+        PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM l7classwork WHERE username=?");
+        preparedStatement.setString(1, username);
         ResultSet resultSet = preparedStatement.executeQuery();
-        resultSet.next();
-        int id = resultSet.getInt(1) + 1;
-
-        preparedStatement=connection.prepareStatement ("INSERT INTO person(id, name, username, password, email) VALUES (?,?,?,?,?)");
-        preparedStatement.setInt(1, id);
-        preparedStatement.setString(2, user.getName());
-        preparedStatement.setString(3, user.getUsername());
-        preparedStatement.setString(4, user.getPassword());
-        preparedStatement.setString(5, user.getEmail());
+        return new UserEnti().setName(resultSet.getString("name")).setUsername(resultSet.getString("username"))
+                .setEmail(resultSet.getString("email")).setPassword(resultSet.getString("password"));
     }
     public void commit() throws Exception{
         connection.commit ();
