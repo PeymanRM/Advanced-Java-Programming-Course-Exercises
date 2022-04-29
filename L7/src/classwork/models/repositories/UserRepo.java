@@ -24,10 +24,16 @@ public class UserRepo {
         preparedStatement.setString(3, user.getPassword());
         preparedStatement.setString(4, user.getEmail());
     }
-    public UserEnti selectUser(String username) throws Exception {
-        PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM l7classwork WHERE username=?");
-        preparedStatement.setString(1, username);
+    public String selectUserPassword(String username) throws Exception {
+        PreparedStatement preparedStatement = connection.prepareStatement("SELECT password FROM l7classwork WHERE username =" + username);
         ResultSet resultSet = preparedStatement.executeQuery();
+        resultSet.next();
+        return resultSet.getString("password");
+    }
+    public UserEnti selectUser(String username) throws Exception {
+        PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM l7classwork WHERE username =" + username);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        resultSet.next();
         return new UserEnti().setName(resultSet.getString("name")).setUsername(resultSet.getString("username"))
                 .setEmail(resultSet.getString("email")).setPassword(resultSet.getString("password"));
     }
