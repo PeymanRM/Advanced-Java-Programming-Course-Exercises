@@ -3,12 +3,11 @@ package classwork.models.services;
 import classwork.models.entities.UserEnti;
 import classwork.models.repositories.UserRepo;
 
-import java.util.List;
 
 public class UserServ {
     private UserServ() {}
-    private UserServ userServ = new UserServ();
-    public UserServ getInstance(){
+    private static UserServ userServ = new UserServ();
+    public static UserServ getInstance(){
         return userServ;
     }
 
@@ -16,6 +15,7 @@ public class UserServ {
         UserRepo userRepo = new UserRepo();
         userRepo.insertUser(user);
         userRepo.commit();
+        userRepo.close();
     }
 
     public UserEnti getUser(String username) throws Exception{

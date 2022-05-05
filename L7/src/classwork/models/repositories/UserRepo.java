@@ -2,10 +2,7 @@ package classwork.models.repositories;
 
 import classwork.models.entities.UserEnti;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 
 public class UserRepo {
     private Connection connection;
@@ -18,20 +15,27 @@ public class UserRepo {
     }
 
     public void insertUser(UserEnti user) throws Exception {
-        preparedStatement=connection.prepareStatement ("INSERT INTO l7classwork(name, username, password, email) VALUES (?,?,?,?)");
+        preparedStatement = connection.prepareStatement("select count(*) from l7classwork");
+        ResultSet resultSet = preparedStatement.executeQuery();
+        resultSet.next();
+        int id = resultSet.getInt(1) + 1;
+
+        preparedStatement=connection.prepareStatement ("INSERT INTO l7classwork(name, username, password, email, id) VALUES (?,?,?,?,?)");
         preparedStatement.setString(1, user.getName());
         preparedStatement.setString(2, user.getUsername());
         preparedStatement.setString(3, user.getPassword());
         preparedStatement.setString(4, user.getEmail());
+        preparedStatement.setInt(5, id);
+        preparedStatement.executeUpdate();
     }
     public String selectUserPassword(String username) throws Exception {
-        PreparedStatement preparedStatement = connection.prepareStatement("SELECT password FROM l7classwork WHERE username =" + username);
+        PreparedStatement preparedStatement = connection.prepareStatement("SELECT password FROM l7classwork WHERE username =\"" + username + "\"");
         ResultSet resultSet = preparedStatement.executeQuery();
         resultSet.next();
         return resultSet.getString("password");
     }
     public UserEnti selectUser(String username) throws Exception {
-        PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM l7classwork WHERE username =" + username);
+        PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM l7classwork WHERE username =\"" + username + "\"");
         ResultSet resultSet = preparedStatement.executeQuery();
         resultSet.next();
         return new UserEnti().setName(resultSet.getString("name")).setUsername(resultSet.getString("username"))
