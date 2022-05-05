@@ -3,7 +3,9 @@ package classwork.models.services;
 import classwork.models.entities.UserEnti;
 import classwork.models.repositories.UserRepo;
 
-
+/**
+ * Created by Peyman RM
+ */
 public class UserServ {
     private UserServ() {}
     private static UserServ userServ = new UserServ();

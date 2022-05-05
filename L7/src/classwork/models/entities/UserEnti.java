@@ -1,5 +1,8 @@
 package classwork.models.entities;
 
+/**
+ * Created by Peyman RM
+ */
 public class UserEnti {
     private String name, password, username, email;
 

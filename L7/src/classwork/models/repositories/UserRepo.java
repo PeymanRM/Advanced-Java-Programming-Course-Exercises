@@ -4,6 +4,9 @@ import classwork.models.entities.UserEnti;
 
 import java.sql.*;
 
+/**
+ * Created by Peyman RM
+ */
 public class UserRepo {
     private Connection connection;
     private PreparedStatement preparedStatement;

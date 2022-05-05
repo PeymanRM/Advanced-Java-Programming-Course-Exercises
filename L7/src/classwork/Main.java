@@ -1,8 +1,11 @@
 package classwork;
 
+import classwork.controllers.UserController;
 import classwork.models.entities.UserEnti;
 import classwork.models.services.UserServ;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -11,15 +14,15 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        String loggedInUsername = null;
+        Map<String,String> loggedInUser = new HashMap<String,String>(); //with only necessary info of the user = username, name
         outer:while (true){
             System.out.print("\nHello, ");
-            if (loggedInUsername != null) {
+            if (loggedInUser != null) {
                 try {
-                    System.out.println(UserServ.getInstance().getUser(loggedInUsername).getName());
+                    System.out.println(loggedInUser);
                 } catch (Exception e){
                     System.out.println ("Failed to load user! " + e.getMessage ());
-                    loggedInUsername = null;
+                    UserController.getInstance().logout();
                     continue;
                 }
                 System.out.println(" how can we help you today?");
