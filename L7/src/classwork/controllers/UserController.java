@@ -4,9 +4,11 @@ package classwork.controllers;
 import classwork.models.entities.UserEnti;
 import classwork.models.services.UserServ;
 
-import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Created by Peyman RM
+ */
 public class UserController {
     private UserController() {}
     private static UserController userController = new UserController();

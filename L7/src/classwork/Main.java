@@ -3,10 +3,7 @@ package classwork;
 import classwork.controllers.AuthController;
 import classwork.controllers.UserController;
 import classwork.models.entities.UserEnti;
-import classwork.models.services.UserServ;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 /**

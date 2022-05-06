@@ -6,6 +6,9 @@ import classwork.models.services.UserServ;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Created by Peyman RM
+ */
 public class AuthController {
     private AuthController() {}
     private static AuthController authController = new AuthController();
