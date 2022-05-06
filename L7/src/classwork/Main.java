@@ -1,5 +1,6 @@
 package classwork;
 
+import classwork.controllers.AuthController;
 import classwork.controllers.UserController;
 import classwork.models.entities.UserEnti;
 import classwork.models.services.UserServ;
@@ -14,12 +15,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        Map<String,String> loggedInUser = new HashMap<String,String>(); //with only necessary info of the user = username, name
         outer:while (true){
             System.out.print("\nHello, ");
-            if (loggedInUser != null) {
+            if (UserController.getInstance().getUser() != null) {
                 try {
-                    System.out.println(loggedInUser);
+                    System.out.println(UserController.getInstance().getUser().get("name"));
                 } catch (Exception e){
                     System.out.println ("Failed to load user! " + e.getMessage ());
                     UserController.getInstance().logout();
@@ -31,14 +31,14 @@ public class Main {
                 switch (input.nextInt()){
                     case 1:
                         try {
-                            UserEnti user = UserServ.getInstance().getUser(loggedInUsername);
+                            UserEnti user = UserController.getInstance().getProfile();
                             System.out.println("Name: " + user.getName() + "\t\tEmail: " + user.getEmail() + "\t\tUsername: " + user.getUsername());
                         } catch (Exception e) {
                             System.out.println("Failed to load user! " + e.getMessage());
                         }
                         break;
                     case 2:
-                        loggedInUsername = null;
+                        UserController.getInstance().logout();
                         System.out.println("Successfully logged out");
                         break;
                     case 3:
@@ -61,9 +61,8 @@ public class Main {
                         System.out.println("Enter a password: ");
                         user.setPassword(input.nextLine());
                         try {
-                            UserServ.getInstance().save(user);
+                            AuthController.getInstance().register(user);
                             System.out.println("User successfully created");
-                            loggedInUsername = user.getUsername();
                         } catch (Exception e){
                             System.out.println ("Failed to save user! " + e.getMessage ());
                         }
@@ -74,14 +73,13 @@ public class Main {
                         input.nextLine();
                         System.out.println("Enter your password: ");
                         try {
-                            if (UserServ.getInstance().verifyUser(enteredUsername, input.nextLine())) {
-                                loggedInUsername = enteredUsername;
+                            if (AuthController.getInstance().login(enteredUsername, input.nextLine())) {
                                 System.out.println("Successfully Logged In");
                             } else {
                                 System.out.println("Username or password is wrong");
                             }
                         } catch (Exception e){
-                            if(e.hashCode() == 130668770) System.out.println("Username or password is wrong");
+                            if(e.getMessage().equals("Illegal operation on empty result set.")) System.out.println("Username or password is wrong");
                             else System.out.println ("Something Went Wrong: " + e.getMessage ());
                         }
                         break;
