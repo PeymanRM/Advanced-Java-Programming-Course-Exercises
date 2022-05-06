@@ -3,7 +3,6 @@ package homework1;
 import homework1.controllers.AuthController;
 import homework1.controllers.UserController;
 import homework1.models.entities.UserEnti;
-import homework1.models.services.UserServ;
 
 import java.util.Scanner;
 
@@ -15,9 +14,9 @@ public class Main {
         Scanner input = new Scanner(System.in);
         outer:while (true){
             System.out.print("\nHello, ");
-            if (UserController.getInstance().getUser() != null) {
+            if (UserController.getInstance().getProfile() != null) {
                 try {
-                    System.out.println(UserController.getInstance().getUser().get("name"));
+                    System.out.println(UserController.getInstance().getProfile().get("name"));
                 } catch (Exception e){
                     System.out.println ("Failed to load user! " + e.getMessage ());
                     UserController.getInstance().logout();
@@ -29,7 +28,7 @@ public class Main {
                 switch (input.nextInt()){
                     case 1:
                         try {
-                            UserEnti user = UserController.getInstance().getProfile();
+                            UserEnti user = UserController.getInstance().getUser();
                             System.out.println("Name: " + user.getName() + "\t\tPhone Number: " + user.getPhoneNumber() + "\t\tUsername: " + user.getUsername());
                             System.out.println("Remaining Traffic = " + user.getTraffic() + "\t\tDebt = " + user.getDebt() + " T");
                         } catch (Exception e) {

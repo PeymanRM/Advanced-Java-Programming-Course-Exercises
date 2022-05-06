@@ -1,7 +1,7 @@
-package homework1.controllers;
+package homework2.controllers;
 
-import homework1.models.entities.UserEnti;
-import homework1.models.services.UserServ;
+import homework2.models.entities.UserEnti;
+import homework2.models.services.UserServ;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,7 +19,7 @@ public class AuthController {
     public void register(UserEnti user) throws Exception {
         UserServ.getInstance().save(user);
         Map<String,String> loggedInUser = new HashMap<String,String>();
-        loggedInUser.put("nationalCode", user.getUsername());
+        loggedInUser.put("username", user.getNationalCode());
         loggedInUser.put("name", user.getName());
         UserController.getInstance().setLoggedInUser(loggedInUser);
     }
@@ -27,7 +27,7 @@ public class AuthController {
     public boolean login(String enteredUsername, String enteredPassword) throws Exception {
         if(UserServ.getInstance().verifyUser(enteredUsername, enteredPassword)) {
             Map<String,String> loggedInUser = new HashMap<String,String>();
-            loggedInUser.put("nationalCode", enteredUsername);
+            loggedInUser.put("username", enteredUsername);
             loggedInUser.put("name", UserServ.getInstance().getUser(enteredUsername).getName());
             UserController.getInstance().setLoggedInUser(loggedInUser);
             return true;

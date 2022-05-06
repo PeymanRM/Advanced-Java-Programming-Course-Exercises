@@ -22,11 +22,11 @@ public class UserController {
         this.loggedInUser = loggedInUser;
     }
 
-    public Map<String,String> getUser() {
+    public Map<String,String> getProfile() {
         return loggedInUser;
     }
 
-    public UserEnti getProfile() throws Exception {
+    public UserEnti getUser() throws Exception {
         return UserServ.getInstance().getUser(loggedInUser.get("username"));
     }
 

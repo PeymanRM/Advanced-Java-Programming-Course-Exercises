@@ -1,8 +1,8 @@
-package homework1.controllers;
+package homework2.controllers;
 
 
-import homework1.models.entities.UserEnti;
-import homework1.models.services.UserServ;
+import homework2.models.entities.UserEnti;
+import homework2.models.services.UserServ;
 
 import java.util.Map;
 
@@ -27,21 +27,21 @@ public class UserController {
     }
 
     public UserEnti getUser() throws Exception {
-        return UserServ.getInstance().getUser(loggedInUser.get("nationalCode"));
-    }
-
-    public void purchasePackage(int packageCode) throws Exception {
-        switch (packageCode) {
-            case 1 -> UserServ.getInstance().editStatus(loggedInUser.get("username"), 2.0, 1000);
-            case 2 -> UserServ.getInstance().editStatus(loggedInUser.get("username"), 4.0, 2000);
-            case 3 -> UserServ.getInstance().editStatus(loggedInUser.get("username"), 10.0, 5000);
-            case 4 -> UserServ.getInstance().editStatus(loggedInUser.get("username"), 25.0, 10000);
-            case 5 -> throw new Exception("back");
-            default -> throw new Exception("Invalid response");
-        }
+        return UserServ.getInstance().getUser(loggedInUser.get("username"));
     }
 
     public void logout() {
         loggedInUser = null;
+    }
+
+    public void purchaseCar(int carCode) throws Exception {
+        switch (carCode) {
+            case 1 -> UserServ.getInstance().editOrder(loggedInUser.get("username"), "Tiba", 200);
+            case 2 -> UserServ.getInstance().editOrder(loggedInUser.get("username"), "Saina", 214);
+            case 3 -> UserServ.getInstance().editOrder(loggedInUser.get("username"), "Pride", 180);
+            case 4 -> UserServ.getInstance().editOrder(loggedInUser.get("username"), "Shahin", 380);
+            case 5 -> throw new Exception("back");
+            default -> throw new Exception("Invalid response");
+        }
     }
 }
