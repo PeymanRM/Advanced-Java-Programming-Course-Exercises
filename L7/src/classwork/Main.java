@@ -25,8 +25,8 @@ public class Main {
                 System.out.println(" how can we help you today?");
                 System.out.println("   1.Profile\n   2.Log out\n   3.Exit");
 
-                switch (input.nextInt()){
-                    case 1:
+                switch (input.nextLine()){
+                    case "1":
                         try {
                             UserEnti user = UserController.getInstance().getProfile();
                             System.out.println("Name: " + user.getName() + "\t\tEmail: " + user.getEmail() + "\t\tUsername: " + user.getUsername());
@@ -34,11 +34,11 @@ public class Main {
                             System.out.println("Failed to load user! " + e.getMessage());
                         }
                         break;
-                    case 2:
+                    case "2":
                         UserController.getInstance().logout();
                         System.out.println("Successfully logged out");
                         break;
-                    case 3:
+                    case "3":
                         break outer;
                     default:
                         System.out.println("Invalid response");
@@ -46,11 +46,10 @@ public class Main {
             } else {
                 System.out.println("how can we help you today?");
                 System.out.println("   1.Sign Up\n   2.Log in\n   3.Exit");
-                switch (input.nextInt()){
-                    case 1:
+                switch (input.nextLine()){
+                    case "1":
                         UserEnti user = new UserEnti();
                         System.out.println("Enter your name: ");
-                        input.nextLine();
                         user.setName(input.nextLine());
                         System.out.println("Enter your email address: ");
                         user.setEmail(input.next());
@@ -66,7 +65,7 @@ public class Main {
                             System.out.println ("Failed to save user! " + e.getMessage ());
                         }
                         break;
-                    case 2:
+                    case "2":
                         System.out.println("Enter your username: ");
                         String enteredUsername = input.next();
                         input.nextLine();
@@ -82,7 +81,7 @@ public class Main {
                             else System.out.println ("Something Went Wrong: " + e.getMessage ());
                         }
                         break;
-                    case 3:
+                    case "3":
                         break outer;
                     default:
                         System.out.println("Invalid response");

@@ -1,8 +1,8 @@
 package homework1;
 
-import classwork.controllers.AuthController;
-import classwork.controllers.UserController;
-import classwork.models.entities.UserEnti;
+import homework1.controllers.AuthController;
+import homework1.controllers.UserController;
+import homework1.models.entities.UserEnti;
 
 import java.util.Scanner;
 
@@ -23,22 +23,26 @@ public class Main {
                     continue;
                 }
                 System.out.println(" how can we help you today?");
-                System.out.println("   1.Profile\n   2.Log out\n   3.Exit");
+                System.out.println("   1.Profile\n   2.Buy package\n   3.Log out\n   4.Exit");
 
                 switch (input.nextInt()){
                     case 1:
                         try {
                             UserEnti user = UserController.getInstance().getProfile();
-                            System.out.println("Name: " + user.getName() + "\t\tEmail: " + user.getEmail() + "\t\tUsername: " + user.getUsername());
+                            System.out.println("Name: " + user.getName() + "\t\tEmail: " + user.getPhoneNumber() + "\t\tUsername: " + user.getUsername());
                         } catch (Exception e) {
                             System.out.println("Failed to load user! " + e.getMessage());
                         }
                         break;
                     case 2:
+                        System.out.println(" Choose a package(added tax is not calculated): ");
+                        System.out.println("   1.Profile\n   2.Buy package\n   3.Log out\n   4.Exit");
+                        break;
+                    case 3:
                         UserController.getInstance().logout();
                         System.out.println("Successfully logged out");
                         break;
-                    case 3:
+                    case 4:
                         break outer;
                     default:
                         System.out.println("Invalid response");
@@ -53,7 +57,7 @@ public class Main {
                         input.nextLine();
                         user.setName(input.nextLine());
                         System.out.println("Enter your email address: ");
-                        user.setEmail(input.next());
+                        user.setPhoneNumber(input.next());
                         System.out.println("Enter a username: ");
                         user.setUsername(input.next());
                         input.nextLine();

@@ -1,7 +1,7 @@
 package homework1.models.services;
 
-import classwork.models.entities.UserEnti;
-import classwork.models.repositories.UserRepo;
+import homework1.models.entities.UserEnti;
+import homework1.models.repositories.UserRepo;
 
 /**
  * Created by Peyman RM
@@ -28,5 +28,14 @@ public class UserServ {
     public boolean verifyUser(String username, String enteredPassword) throws Exception{
         UserRepo userRepo = new UserRepo();
         return userRepo.selectUserPassword(username).equals(enteredPassword);
+    }
+
+    public void editStatus(String username, Double addedTraffic, int addedDebt) throws Exception{
+        UserRepo userRepo = new UserRepo();
+        UserEnti user = getUser(username);
+        // +9% tax
+        userRepo.updateStatus(username, user.getTraffic() + addedTraffic, user.getDebt() + (addedDebt/100 * 109));
+        userRepo.commit();
+        userRepo.close();
     }
 }

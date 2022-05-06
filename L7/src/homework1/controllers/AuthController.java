@@ -1,8 +1,7 @@
 package homework1.controllers;
 
-import classwork.controllers.UserController;
-import classwork.models.entities.UserEnti;
-import classwork.models.services.UserServ;
+import homework1.models.entities.UserEnti;
+import homework1.models.services.UserServ;
 
 import java.util.HashMap;
 import java.util.Map;

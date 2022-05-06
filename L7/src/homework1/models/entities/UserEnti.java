@@ -4,14 +4,15 @@ package homework1.models.entities;
  * Created by Peyman RM
  */
 public class UserEnti {
-    private String name, password, username, email;
-    private int traffic, debt;
+    private String name, password, username, phoneNumber;
+    private int debt = 0;
+    private double traffic = 0;
 
-    public int getTraffic() {
+    public double getTraffic() {
         return traffic;
     }
 
-    public UserEnti addTraffic(int traffic) {
+    public UserEnti addTraffic(double traffic) {
         this.traffic += traffic;
         return this;
     }
@@ -52,12 +53,12 @@ public class UserEnti {
         return this;
     }
 
-    public String getEmail() {
-        return email;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public UserEnti setEmail(String email) {
-        this.email = email;
+    public UserEnti setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
         return this;
     }
 }
