@@ -30,6 +30,17 @@ public class UserController {
         return UserServ.getInstance().getUser(loggedInUser.get("username"));
     }
 
+    public void purchasePackage(int packageCode) throws Exception {
+        switch (packageCode) {
+            case 1 -> UserServ.getInstance().editStatus(loggedInUser.get("username"), 2.0, 1000);
+            case 2 -> UserServ.getInstance().editStatus(loggedInUser.get("username"), 4.0, 2000);
+            case 3 -> UserServ.getInstance().editStatus(loggedInUser.get("username"), 10.0, 5000);
+            case 4 -> UserServ.getInstance().editStatus(loggedInUser.get("username"), 25.0, 10000);
+            case 5 -> throw new Exception("back");
+            default -> throw new Exception("Invalid response");
+        }
+    }
+
     public void logout() {
         loggedInUser = null;
     }

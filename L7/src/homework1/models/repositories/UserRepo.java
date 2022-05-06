@@ -48,7 +48,7 @@ public class UserRepo {
                 .addTraffic(resultSet.getDouble("traffic")).addDebt(resultSet.getInt("debt"));
     }
     public void updateStatus(String username, double traffic, int debt) throws Exception {
-        preparedStatement = connection.prepareStatement("UPDATE SET traffic=?, debt=? WHERE username=?");
+        preparedStatement = connection.prepareStatement("UPDATE l7homework1 SET traffic=?, debt=? WHERE username=?");
         preparedStatement.setDouble(1, traffic);
         preparedStatement.setInt(2, debt);
         preparedStatement.setString(3, username);
