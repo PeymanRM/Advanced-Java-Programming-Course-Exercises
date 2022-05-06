@@ -1,4 +1,4 @@
-package classwork;
+package homework1;
 
 import classwork.controllers.AuthController;
 import classwork.controllers.UserController;
