@@ -2,7 +2,10 @@ package classwork.models.repositories;
 
 import classwork.models.entities.UserEnti;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 /**
  * Created by Peyman RM
