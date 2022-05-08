@@ -7,10 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="classwork.controllers.MainController">
    <children>
-      <Label layoutX="598.0" layoutY="80.0" prefHeight="74.0" prefWidth="155.0" style="-fx-font-weight: bold; -fx-text-fill: #66fcf1;" text="Sign Up" textFill="#030000" AnchorPane.rightAnchor="200.0">
+      <Label layoutX="551.0" layoutY="80.0" prefHeight="74.0" prefWidth="142.0" style="-fx-font-weight: bold; -fx-text-fill: #66fcf1;" text="Sign Up" textFill="#030000">
          <font>
             <Font size="37.0" />
          </font>
@@ -20,13 +19,14 @@
             <Font size="37.0" />
          </font>
       </Label>
-      <TextField layoutX="202.0" layoutY="179.0" promptText="Username" />
-      <PasswordField layoutX="202.0" layoutY="241.0" promptText="Password" />
-      <Button layoutX="250.0" layoutY="300.0" mnemonicParsing="false" text="Login" />
-      <TextField layoutX="547.0" layoutY="179.0" promptText="Name" />
-      <TextField layoutX="547.0" layoutY="241.0" promptText="Email Address" />
-      <TextField layoutX="547.0" layoutY="303.0" promptText="Username" />
-      <PasswordField layoutX="547.0" layoutY="365.0" promptText="Password" />
-      <Button layoutX="589.0" layoutY="424.0" mnemonicParsing="false" text="Sign Up" />
+      <TextField fx:id="loginUsernameTextField" layoutX="202.0" layoutY="179.0" promptText="Username" />
+      <PasswordField fx:id="loginPasswordField" layoutX="202.0" layoutY="241.0" promptText="Password" />
+      <Button layoutX="250.0" layoutY="300.0" mnemonicParsing="false" onAction="#login" text="Login" />
+      <TextField fx:id="signupNameTextField" layoutX="547.0" layoutY="179.0" promptText="Name" />
+      <TextField fx:id="signupEmailTextField" layoutX="547.0" layoutY="241.0" promptText="Email Address" />
+      <TextField fx:id="signupUsernameTextField" layoutX="547.0" layoutY="303.0" promptText="Username" />
+      <PasswordField fx:id="signupPasswordField1" layoutX="547.0" layoutY="365.0" promptText="Password" />
+      <PasswordField fx:id="signupPasswordField2" layoutX="547.0" layoutY="427.0" promptText="Enter Password Again" />
+      <Button layoutX="589.0" layoutY="486.0" mnemonicParsing="false" onAction="#SignUp" text="Sign Up" />
    </children>
 </AnchorPane>
