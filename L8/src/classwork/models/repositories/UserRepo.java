@@ -45,7 +45,7 @@ public class UserRepo {
         ResultSet resultSet = preparedStatement.executeQuery();
         resultSet.next();
         return new UserEnti().setName(resultSet.getString("name")).setUsername(resultSet.getString("username"))
-                .setEmail(resultSet.getString("email")).setPassword(resultSet.getString("password"));
+                .setEmail(resultSet.getString("email"));
     }
     public void commit() throws Exception{
         connection.commit ();
