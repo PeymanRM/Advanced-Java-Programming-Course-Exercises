@@ -36,6 +36,9 @@ public class MainController {
             } else {
                 System.out.println("ERROR1");
             }
+        } catch (IOException e){
+            System.out.println("ERROR3 IO: " + e.getMessage());
+
         } catch (Exception e){
             System.out.println("ERROR2: " + e.getMessage());
         }
@@ -63,7 +66,7 @@ public class MainController {
     private void renderDashboardView(Event event, Map<String,String> loggedInUser) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/dashboard-view.fxml"));
         root = loader.load();
-        DashboardController dashboardController = new DashboardController();
+        DashboardController dashboardController = loader.getController();
         dashboardController.setLoggedInUser(loggedInUser);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
