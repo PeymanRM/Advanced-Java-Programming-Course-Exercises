@@ -62,7 +62,7 @@ public class MainController {
             user.setName(signupNameTextField.getText().trim()).setEmail(signupEmailTextField.getText().toLowerCase().trim())
                     .setUsername(signupUsernameTextField.getText().toLowerCase().trim()).setPassword(signupPasswordField1.getText());
             try {
-                user.validateInputs();
+                user.validateInputs(true);
                 UserServ.getInstance().save(user);
                 Map<String,String> loggedInUser = new HashMap<String,String>();
                 loggedInUser.put("username", user.getUsername());

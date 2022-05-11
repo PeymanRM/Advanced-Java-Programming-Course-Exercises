@@ -10,7 +10,7 @@ import java.util.regex.*;
  */
 public class UserValidator extends UserEnti {
 
-    public void validateInputs() throws Exception {
+    public void validateInputs(boolean validatePassword) throws Exception {
         //name
         if (getName().length() < 3) throw new UserInputException("Entered name is too short!");
         if (!Pattern.matches("^[a-zA-Z ,.'-]+$" ,getName())) throw new UserInputException("Invalid name!");
@@ -25,6 +25,9 @@ public class UserValidator extends UserEnti {
         if (!Pattern.matches("^(?![.])[a-zA-Z0-9._]+(?<![.])$" ,getUsername())) throw new UserInputException("Username cant begin or end with dot( . )!");
 
         //password
-        if (getPassword().length() < 6 || getPassword().length() > 64) throw new UserInputException("Password must contain between 6 to 64 characters.");
+        if(validatePassword) {
+            if (getPassword().length() < 6 || getPassword().length() > 64)
+                throw new UserInputException("Password must contain between 6 to 64 characters.");
+        }
     }
 }
