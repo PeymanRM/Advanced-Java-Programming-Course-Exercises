@@ -47,6 +47,13 @@ public class UserRepo {
         return new UserEnti().setName(resultSet.getString("name")).setUsername(resultSet.getString("username"))
                 .setEmail(resultSet.getString("email"));
     }
+    public void updateUserInfo(UserEnti user) throws Exception {
+        preparedStatement=connection.prepareStatement ("update l7classwork set name=?, username=?, email=? WHERE username =\"" + user.getUsername() + "\"");
+        preparedStatement.setString(1, user.getName());
+        preparedStatement.setString(2, user.getUsername());
+        preparedStatement.setString(3, user.getEmail());
+        preparedStatement.executeUpdate();
+    }
     public void commit() throws Exception{
         connection.commit ();
     }
