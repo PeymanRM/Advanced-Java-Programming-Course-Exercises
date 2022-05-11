@@ -1,7 +1,8 @@
 package classwork.controllers;
 
-import classwork.models.entities.UserEnti;
 import classwork.models.services.UserServ;
+import classwork.validators.UserInputException;
+import classwork.validators.UserValidator;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -16,6 +17,9 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Created by Peyman RM
+ */
 public class MainController {
 
     @FXML
@@ -46,16 +50,19 @@ public class MainController {
 
     public void SignUp(ActionEvent event) {
         if(signupPasswordField1.getText().equals(signupPasswordField2.getText())) {
-            UserEnti user = new UserEnti();
+            UserValidator user = new UserValidator();
             user.setName(signupNameTextField.getText().trim()).setEmail(signupEmailTextField.getText().toLowerCase().trim())
                     .setUsername(signupUsernameTextField.getText().toLowerCase().trim()).setPassword(signupPasswordField1.getText());
             try {
+                user.validateInputs();
                 UserServ.getInstance().save(user);
                 Map<String,String> loggedInUser = new HashMap<String,String>();
                 loggedInUser.put("username", user.getUsername());
                 loggedInUser.put("name", user.getName());
                 renderDashboardView(event, loggedInUser);
-            }catch (Exception e){
+            } catch (UserInputException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e){
                 System.out.println(e.getMessage());
             }
         } else{
