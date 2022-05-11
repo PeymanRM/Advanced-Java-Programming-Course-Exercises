@@ -7,17 +7,17 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="classwork.controllers.DashboardController">
    <children>
-      <Label fx:id="nameLabel" layoutX="75.0" layoutY="62.0" prefHeight="54.0" prefWidth="750.0" style="-fx-font-weight: bold; -fx-text-fill: #66fcf1; -fx-alignment: left;" text="Welcome,">
+      <Label fx:id="nameLabel" layoutX="75.0" layoutY="62.0" prefHeight="54.0" prefWidth="750.0" style="-fx-font-weight: bold; -fx-text-fill: #66fcf1; -fx-alignment: center-left;" text="Welcome,">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <Label fx:id="usernameLabel" layoutX="325.0" layoutY="196.0" prefHeight="30.0" prefWidth="439.0" style="-fx-alignment: left;">
+      <Label fx:id="usernameLabel" layoutX="325.0" layoutY="196.0" prefHeight="30.0" prefWidth="439.0" style="-fx-alignment: center-left;">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="emailLabel" layoutX="382.0" layoutY="252.0" prefHeight="30.0" prefWidth="390.0" style="-fx-alignment: left;">
+      <Label fx:id="emailLabel" layoutX="382.0" layoutY="252.0" prefHeight="30.0" prefWidth="390.0" style="-fx-alignment: center-left;">
          <font>
             <Font size="20.0" />
          </font>
