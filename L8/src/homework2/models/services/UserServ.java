@@ -25,6 +25,13 @@ public class UserServ {
         return userRepo.selectUser(username);
     }
 
+    public void editUserInfo(UserEnti user) throws Exception{
+        UserRepo userRepo = new UserRepo();
+        userRepo.updateUserInfo(user);
+        userRepo.commit();
+        userRepo.close();
+    }
+
     public boolean verifyUser(String username, String enteredPassword) throws Exception{
         UserRepo userRepo = new UserRepo();
         return userRepo.selectUserPassword(username).equals(enteredPassword);
