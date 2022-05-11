@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -25,12 +26,16 @@ public class MainController {
     @FXML
     private TextField loginUsernameTextField, loginPasswordField,
             signupNameTextField,signupEmailTextField, signupUsernameTextField, signupPasswordField1, signupPasswordField2;
+    @FXML
+    private Label loginErrorLabel, signUpErrorLabel;
 
     private Stage stage;
     private Scene scene;
     private Parent root;
 
     public void login(ActionEvent event) {
+        loginErrorLabel.setText("");
+        signUpErrorLabel.setText("");
         try {
             if (UserServ.getInstance().verifyUser(loginUsernameTextField.getText().toLowerCase().trim(), loginPasswordField.getText())) {
                 Map<String, String> loggedInUser = new HashMap<String, String>();
@@ -38,17 +43,20 @@ public class MainController {
                 loggedInUser.put("name", UserServ.getInstance().getUser(loginUsernameTextField.getText().toLowerCase().trim()).getName());
                 renderDashboardView(event, loggedInUser);
             } else {
-                System.out.println("ERROR1");
+                loginErrorLabel.setText("Wrong username or password!");
             }
         } catch (IOException e){
-            System.out.println("ERROR3 IO: " + e.getMessage());
+            loginErrorLabel.setText("Something went wrong on our end");
 
         } catch (Exception e){
-            System.out.println("ERROR2: " + e.getMessage());
+            if (e.getMessage().equals("Illegal operation on empty result set.")) loginErrorLabel.setText("Wrong username or password!");
+            else loginErrorLabel.setText("Something went wrong on our end");
         }
     }
 
     public void SignUp(ActionEvent event) {
+        loginErrorLabel.setText("");
+        signUpErrorLabel.setText("");
         if(signupPasswordField1.getText().equals(signupPasswordField2.getText())) {
             UserValidator user = new UserValidator();
             user.setName(signupNameTextField.getText().trim()).setEmail(signupEmailTextField.getText().toLowerCase().trim())
@@ -61,12 +69,13 @@ public class MainController {
                 loggedInUser.put("name", user.getName());
                 renderDashboardView(event, loggedInUser);
             } catch (UserInputException e) {
-                System.out.println(e.getMessage());
+                signUpErrorLabel.setText(e.getMessage());
             } catch (Exception e){
-                System.out.println(e.getMessage());
+                if(e.getMessage().split("'")[0].equals("Duplicate entry ")) signUpErrorLabel.setText("Entered username is already used.\nPick another one.");
+                else signUpErrorLabel.setText("Something went wrong on our end");
             }
         } else{
-            System.out.println("ERROR PASSWORDS DON'T MATCH");
+            signUpErrorLabel.setText("Passwords don't match!");
         }
     }
 

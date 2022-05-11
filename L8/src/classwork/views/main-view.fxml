@@ -9,24 +9,34 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="classwork.controllers.MainController">
    <children>
-      <Label layoutX="551.0" layoutY="63.0" prefHeight="74.0" prefWidth="142.0" style="-fx-font-weight: bold; -fx-text-fill: #66fcf1;" text="Sign Up" textFill="#030000">
+      <Label layoutX="551.0" layoutY="43.0" prefHeight="74.0" prefWidth="142.0" style="-fx-font-weight: bold; -fx-text-fill: #66fcf1;" text="Sign Up" textFill="#030000">
          <font>
             <Font size="37.0" />
          </font>
       </Label>
-      <Label layoutX="200.0" layoutY="63.0" prefHeight="74.0" prefWidth="155.0" style="-fx-font-weight: bold; -fx-text-fill: #66fcf1;" text="Login" textFill="#030000" AnchorPane.leftAnchor="200.0">
+      <Label layoutX="200.0" layoutY="43.0" prefHeight="74.0" prefWidth="155.0" style="-fx-font-weight: bold; -fx-text-fill: #66fcf1;" text="Login" textFill="#030000" AnchorPane.leftAnchor="200.0">
          <font>
             <Font size="37.0" />
          </font>
       </Label>
-      <TextField fx:id="loginUsernameTextField" layoutX="202.0" layoutY="162.0" promptText="Username" />
-      <PasswordField fx:id="loginPasswordField" layoutX="202.0" layoutY="224.0" promptText="Password" />
-      <Button layoutX="250.0" layoutY="283.0" mnemonicParsing="false" onAction="#login" text="Login" />
-      <TextField fx:id="signupNameTextField" layoutX="547.0" layoutY="162.0" promptText="Name" />
-      <TextField fx:id="signupEmailTextField" layoutX="547.0" layoutY="224.0" promptText="Email Address" />
-      <TextField fx:id="signupUsernameTextField" layoutX="547.0" layoutY="286.0" promptText="Username" />
-      <PasswordField fx:id="signupPasswordField1" layoutX="547.0" layoutY="348.0" promptText="Password" />
-      <PasswordField fx:id="signupPasswordField2" layoutX="547.0" layoutY="410.0" promptText="Enter Password Again" />
-      <Button layoutX="589.0" layoutY="469.0" mnemonicParsing="false" onAction="#SignUp" text="Sign Up" />
+      <TextField fx:id="loginUsernameTextField" layoutX="202.0" layoutY="142.0" promptText="Username" />
+      <PasswordField fx:id="loginPasswordField" layoutX="202.0" layoutY="204.0" promptText="Password" />
+      <Button layoutX="250.0" layoutY="263.0" mnemonicParsing="false" onAction="#login" text="Login" />
+      <TextField fx:id="signupNameTextField" layoutX="547.0" layoutY="142.0" promptText="Name" />
+      <TextField fx:id="signupEmailTextField" layoutX="547.0" layoutY="204.0" promptText="Email Address" />
+      <TextField fx:id="signupUsernameTextField" layoutX="547.0" layoutY="266.0" promptText="Username" />
+      <PasswordField fx:id="signupPasswordField1" layoutX="547.0" layoutY="328.0" promptText="Password" />
+      <PasswordField fx:id="signupPasswordField2" layoutX="547.0" layoutY="390.0" promptText="Enter Password Again" />
+      <Button layoutX="589.0" layoutY="449.0" mnemonicParsing="false" onAction="#SignUp" text="Sign Up" />
+      <Label fx:id="loginErrorLabel" contentDisplay="CENTER" layoutX="205.0" layoutY="312.0" prefHeight="74.0" prefWidth="150.0" style="-fx-text-fill: #fe2c54; -fx-alignment: top-center; -fx-text-alignment: center;" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="signUpErrorLabel" contentDisplay="CENTER" layoutX="547.0" layoutY="496.0" prefHeight="74.0" prefWidth="150.0" style="-fx-text-fill: #fe2c54; -fx-alignment: top-center; -fx-text-alignment: center;" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
