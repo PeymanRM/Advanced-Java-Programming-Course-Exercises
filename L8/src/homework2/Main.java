@@ -19,7 +19,7 @@ public class Main extends Application {
         String css = this.getClass().getResource("./views/css/styles.css").toExternalForm();
         scene.getStylesheets().add(css);
         stage.setScene(scene);
-        stage.setTitle("Classwork");
+        stage.setTitle("Homework2");
         Image icon = new Image("icon.png");
         stage.setResizable(false);
         stage.getIcons().add(icon);

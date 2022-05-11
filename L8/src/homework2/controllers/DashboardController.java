@@ -41,6 +41,17 @@ public class DashboardController {
         }
     }
 
+    public void editInfo(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/editmenu-view.fxml"));
+        root = loader.load();
+        EditMenuController editMenuController = loader.getController();
+        editMenuController.setLoggedInUser(loggedInUser);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public void logout(ActionEvent event) throws IOException {
         loggedInUser = null;
         root = FXMLLoader.load(getClass().getResource("../views/main-view.fxml"));
