@@ -26,7 +26,7 @@ public class EmployeeRepo {
         resultSet.next();
         int id = resultSet.getInt(1) + 1;
 
-        preparedStatement=connection.prepareStatement ("INSERT INTO l7classwork(name, fatherName, nationalCode, age, degree, phoneNumber, telephone, adress, id) VALUES (?,?,?,?,?,?,?,?,?)");
+        preparedStatement=connection.prepareStatement ("INSERT INTO l8homework1(name, fatherName, nationalCode, age, `degree`, phoneNumber, telephone, address, id) VALUES (?,?,?,?,?,?,?,?,?)");
         preparedStatement.setString(1, employee.getName());
         preparedStatement.setString(2, employee.getFatherName());
         preparedStatement.setString(3, employee.getNationalCode());

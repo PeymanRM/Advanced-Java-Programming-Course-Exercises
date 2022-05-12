@@ -1,4 +1,4 @@
-package homework1;
+package homework2;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +19,7 @@ public class Main extends Application {
         String css = this.getClass().getResource("./views/css/styles.css").toExternalForm();
         scene.getStylesheets().add(css);
         stage.setScene(scene);
-        stage.setTitle("homework1");
+        stage.setTitle("Homework2");
         Image icon = new Image("icon.png");
         stage.setResizable(false);
         stage.getIcons().add(icon);

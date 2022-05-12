@@ -1,6 +1,5 @@
 package homework1.validators;
 
-import homework1.validators.EmployeeInputException;
 import homework1.models.entities.EmployeeEnti;
 
 import java.util.regex.Pattern;
@@ -19,15 +18,16 @@ public class EmployeeValidator extends EmployeeEnti {
         //National Code
         if (getNationalCode().length() != 10) throw new EmployeeInputException("National code must be 10 digits!");
         if (!Pattern.matches("^[0-9]+$", getNationalCode())) throw new EmployeeInputException("National code must only contain digits!");
-        final int r = Character.getNumericValue(getNationalCode().charAt(10));
+        final int r = Character.getNumericValue(getNationalCode().charAt(9));
         int sum = 0;
         for (int i = 0; i < getNationalCode().length()-1; i++){
             sum += Character.getNumericValue(getNationalCode().charAt(i)) * (10-i);
         }
-        if(sum%11 < 2)
-            if(sum%11 != r) throw new EmployeeInputException("Invalid national code!");
-        else
-            if(11-sum%11 != r) throw new EmployeeInputException("Invalid national code!");
+        if(sum%11 < 2) {
+            if (sum % 11 != r) throw new EmployeeInputException("Invalid national code!");
+        } else {
+            if (11 - (sum % 11) != r) throw new EmployeeInputException("Invalid national code!");
+        }
 
         //Age
         if (getAge() < 0) throw new EmployeeInputException("Invalid age!");

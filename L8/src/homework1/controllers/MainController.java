@@ -1,6 +1,5 @@
 package homework1.controllers;
 
-import classwork.validators.UserInputException;
 import homework1.models.services.EmployeeServ;
 import homework1.validators.EmployeeInputException;
 import homework1.validators.EmployeeValidator;
@@ -43,21 +42,22 @@ public class MainController {
             employee.validateInputs();
             EmployeeServ.getInstance().save(employee);
 
-        } catch (UserInputException e) {
+            errorLabel.setTextFill(Color.web("#b6f404"));
+            errorLabel.setText("Successfully Submitted");
+            nameTextField.setText("");
+            fatherNameTextField.setText("");
+            nationalCodeTextField.setText("");
+            ageTextField.setText("");
+            degreeTextField.setText("");
+            phoneNumberTextField.setText("");
+            telephoneTextField.setText("");
+            addressTextField.setText("");
+        } catch (EmployeeInputException e) {
             errorLabel.setText(e.getMessage());
         } catch (Exception e){
             errorLabel.setText("Something went wrong on our end");
+            System.out.println(e.getMessage());
         }
 
-        errorLabel.setTextFill(Color.web("#b6f404"));
-        errorLabel.setText("Successfully Submitted");
-        nameTextField.setText("");
-        fatherNameTextField.setText("");
-        nationalCodeTextField.setText("");
-        ageTextField.setText("");
-        degreeTextField.setText("");
-        phoneNumberTextField.setText("");
-        telephoneTextField.setText("");
-        addressTextField.setText("");
     }
 }
