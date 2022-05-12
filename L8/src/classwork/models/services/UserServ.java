@@ -15,6 +15,15 @@ public class UserServ {
 
     public void save(UserEnti user) throws Exception {
         UserRepo userRepo = new UserRepo();
+
+        //hashing password
+        PasswordAuthentication auth = new PasswordAuthentication();
+        char[] password = new char[user.getPassword().length()];
+        for (int i = 0; i < user.getPassword().length(); i++) {
+            password[i] = user.getPassword().charAt(i);
+        }
+        user.setPassword(auth.hash(password));
+
         userRepo.insertUser(user);
         userRepo.commit();
         userRepo.close();
@@ -27,6 +36,12 @@ public class UserServ {
 
     public boolean verifyUser(String username, String enteredPassword) throws Exception{
         UserRepo userRepo = new UserRepo();
-        return userRepo.selectUserPassword(username).equals(enteredPassword);
+        //verifying password with saved password hash
+        PasswordAuthentication auth = new PasswordAuthentication();
+        char[] enteredPasswordChar = new char[enteredPassword.length()];
+        for (int i = 0; i < enteredPassword.length(); i++) {
+            enteredPasswordChar[i] = enteredPassword.charAt(i);
+        }
+        return auth.authenticate(enteredPasswordChar, userRepo.selectUserPassword(username));
     }
 }

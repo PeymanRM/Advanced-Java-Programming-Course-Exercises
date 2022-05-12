@@ -4,7 +4,7 @@ package classwork.models.entities;
  * Created by Peyman RM
  */
 public class UserEnti {
-    private String name, password, username, email;
+    private String name, password, username, email; // password -> varchar(50)
 
     public String getName() {
         return name;
