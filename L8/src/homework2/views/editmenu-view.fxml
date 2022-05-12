@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="homework2.controllers.EditMenuController">
    <children>
       <TextField fx:id="editNameTextField" layoutX="375.0" layoutY="154.0" promptText="Name" />
