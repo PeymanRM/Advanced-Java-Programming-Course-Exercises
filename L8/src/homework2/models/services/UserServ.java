@@ -1,7 +1,7 @@
-package classwork.models.services;
+package homework2.models.services;
 
-import classwork.models.entities.UserEnti;
-import classwork.models.repositories.UserRepo;
+import homework2.models.entities.UserEnti;
+import homework2.models.repositories.UserRepo;
 
 /**
  * Created by Peyman RM
@@ -32,6 +32,13 @@ public class UserServ {
     public UserEnti getUser(String username) throws Exception{
         UserRepo userRepo = new UserRepo();
         return userRepo.selectUser(username);
+    }
+
+    public void editUserInfo(UserEnti user, String previousUsername) throws Exception{
+        UserRepo userRepo = new UserRepo();
+        userRepo.updateUserInfo(user, previousUsername);
+        userRepo.commit();
+        userRepo.close();
     }
 
     public boolean verifyUser(String username, String enteredPassword) throws Exception{

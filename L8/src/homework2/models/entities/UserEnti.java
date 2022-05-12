@@ -1,4 +1,4 @@
-package classwork.models.entities;
+package homework2.models.entities;
 
 /**
  * Created by Peyman RM
