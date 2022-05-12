@@ -72,7 +72,10 @@ public class MainController {
             } catch (UserInputException e) {
                 signUpErrorLabel.setText(e.getMessage());
             } catch (Exception e){
-                if(e.getMessage().split("'")[0].equals("Duplicate entry ")) signUpErrorLabel.setText("Entered username is already used.\nPick another one.");
+                if(e.getMessage().split("'")[0].equals("Duplicate entry ") && e.getMessage().split("'")[3].equals("l7classwork.username_UNIQUE"))
+                    signUpErrorLabel.setText("Entered username is already used.\nPick another one.");
+                else if(e.getMessage().split("'")[0].equals("Duplicate entry ") && e.getMessage().split("'")[3].equals("l7classwork.email_UNIQUE"))
+                    signUpErrorLabel.setText("Entered email is already used.");
                 else signUpErrorLabel.setText("Something went wrong on our end");
                     System.out.println(e.getMessage());
             }
