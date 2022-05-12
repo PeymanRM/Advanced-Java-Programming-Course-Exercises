@@ -73,6 +73,7 @@ public class MainController {
             } catch (Exception e){
                 if(e.getMessage().split("'")[0].equals("Duplicate entry ")) signUpErrorLabel.setText("Entered username is already used.\nPick another one.");
                 else signUpErrorLabel.setText("Something went wrong on our end");
+                System.out.println(e.getMessage());
             }
         } else{
             signUpErrorLabel.setText("Passwords don't match!");
