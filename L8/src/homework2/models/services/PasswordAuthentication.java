@@ -1,4 +1,4 @@
-package homework2.controllers;
+package homework2.models.services;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;

@@ -1,5 +1,6 @@
 package homework2.controllers;
 
+import homework2.models.services.PasswordAuthentication;
 import homework2.models.services.UserServ;
 import homework2.validators.UserInputException;
 import homework2.validators.UserValidator;
@@ -63,15 +64,6 @@ public class MainController {
                     .setUsername(signupUsernameTextField.getText().toLowerCase().trim()).setPassword(signupPasswordField1.getText());
             try {
                 user.validateInputs(true);
-
-                PasswordAuthentication auth = new PasswordAuthentication();
-                char[] password = new char[user.getPassword().length()];
-                for (int i = 0; i < user.getPassword().length(); i++) {
-                    password[i] = user.getPassword().charAt(i);
-                }
-                user.setPassword(auth.hash(password));
-                System.out.println(user.getPassword());
-
                 UserServ.getInstance().save(user);
                 Map<String,String> loggedInUser = new HashMap<String,String>();
                 loggedInUser.put("username", user.getUsername());
