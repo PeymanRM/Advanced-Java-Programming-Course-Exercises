@@ -25,9 +25,9 @@ public class UserServ {
         return userRepo.selectUser(username);
     }
 
-    public void editUserInfo(UserEnti user) throws Exception{
+    public void editUserInfo(UserEnti user, String previousUsername) throws Exception{
         UserRepo userRepo = new UserRepo();
-        userRepo.updateUserInfo(user);
+        userRepo.updateUserInfo(user, previousUsername);
         userRepo.commit();
         userRepo.close();
     }

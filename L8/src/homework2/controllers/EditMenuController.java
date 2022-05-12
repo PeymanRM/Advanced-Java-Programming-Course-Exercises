@@ -55,7 +55,7 @@ public class EditMenuController {
                 .setUsername(editUsernameTextField.getText().toLowerCase().trim());
         try {
             user.validateInputs(false);
-            UserServ.getInstance().editUserInfo(user);
+            UserServ.getInstance().editUserInfo(user, loggedInUser.get("username"));
             loggedInUser.put("username", user.getUsername());
             loggedInUser.put("name", user.getName());
             editErrorLabel.setTextFill(Color.web("#b6f404"));
