@@ -38,4 +38,14 @@ public class EmployeeRepo {
         preparedStatement.setInt(9, id);
         preparedStatement.executeUpdate();
     }
+    public void commit() throws Exception{
+        connection.commit ();
+    }
+    public void rollback() throws Exception{
+        connection.rollback ();
+    }
+    public void close() throws Exception{
+        preparedStatement.close ();
+        connection.close ();
+    }
 }
