@@ -1,5 +1,8 @@
 package homework1.models.entities;
 
+/**
+ * Created by Peyman RM
+ */
 public class EmployeeEnti {
     private String name, fatherName, nationalCode, degree, phoneNumber, Telephone, Address;
     private int age;
