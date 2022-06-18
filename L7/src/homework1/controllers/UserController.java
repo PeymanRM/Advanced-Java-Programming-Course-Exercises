@@ -27,7 +27,7 @@ public class UserController {
     }
 
     public UserEnti getUser() throws Exception {
-        return UserServ.getInstance().getUser(loggedInUser.get("nationalCode"));
+        return UserServ.getInstance().getUser(loggedInUser.get("username"));
     }
 
     public void purchasePackage(int packageCode) throws Exception {
